@@ -90,8 +90,20 @@ def logout():
 @app.route('/weather_search', methods = ['GET', 'POST'])
 def weather_search():
 	if request.method == 'POST':
-		if ApiCaller.search():
-			print (session['weather'])
+		weather = ApiCaller.search()
+		status = weather.get_status()
+		detailed_status = weather.get_detailed_status()
+		clouds = weather.get_clouds()
+		rain = weather.get_rain()
+		snow = weather.get_snow()
+		wind = weather.get_wind()
+		humidity = weather.get_humidity()
+		pressure = weather.get_pressure()
+		temperature = weather.get_temperature(unit = 'celsius')
+		weather_data = (status, detailed_status, clouds, rain, snow, wind, humidity, pressure, temperature)
+		return render_template('cityweather.html',data = weather_data)
+
+
 		
 
 

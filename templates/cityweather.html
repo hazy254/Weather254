@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron">
+    <div class="col-md-12, mx-auto">
+        <h3>Status: {{data[0]}}</h3>
+        <h3>Detailed Status: {{data[1]}}</h3>
+        <h3>Cloud Cover: {{data[2]}}</h3>
+        <h3>Rain volume: {{data[3]['3h']}}</h3>
+        <h3>Wind Degree and Speed: {{data[5]['deg']}} degrees, {{data[5]['speed']}} knots </h3>
+        <h3>Humidity: {{data[6]}}</h3>
+        <h3>Pressure: {{data[7]['press']}}</h3>
+        <h3>Temperature (&#176 C): {{data[8]['temp']}}</h3>
+    </div>
+</div>
+
+
+{% endblock %}

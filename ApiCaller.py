@@ -13,7 +13,5 @@ def search():
     search_id = int (form.search_term.data[:7])
     obs = owm.weather_at_id(search_id)
     weather = obs.get_weather()
-    session['weather'] = repr(weather)
-    print (session)
-    return True
+    return weather
 
