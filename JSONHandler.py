@@ -2,6 +2,8 @@ import json
 import io
 import pymysql
 
+#TO_DO: Migrate databases to PostGreSQL 
+
 connection = pymysql.connect(host='localhost',
                              user='root',
                              password='Hazy9996',

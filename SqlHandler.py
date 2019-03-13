@@ -4,6 +4,9 @@ from FormHandler import RegisterForm
 
 import pymysql
 
+#TODO: Migrate Databases to PostGreSQL
+#TODO: Add Home Town to user registration
+
 connection = pymysql.connect(host='localhost',
                              user='root',
                              password='Hazy9996',

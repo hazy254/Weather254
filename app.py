@@ -12,7 +12,9 @@ import ApiCaller
 
 app = Flask(__name__)
 
-
+#TODO: Add Hometown Weather data view to dashboard
+#TODO: Add 3h 5 day Forecasts
+#TODO: Store Location object and pass to cityweather view
 
 @app.route('/')
 def index():
@@ -51,9 +53,7 @@ def dashboard():
 	session['user_searched'] = False	
 	return render_template("dashboard.html")
 
-""" @user_searched
-def myweather():
-	return render_template('myweather.html') """
+
 
 #Register new user with assistance from FormHandler class and SqlHandler
 @app.route('/register', methods=['GET', 'POST'])
