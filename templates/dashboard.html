@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Dashboard<small> Welcome {{session.username}}</small> </h1>
+{% if session.user_searched != True %}
+<div class = "text-center, jumbotron">
+    <form class="form-group" method="POST">
+        <input class = "form-control" name="city" ><br>
+        <button type="submit" class="btn btn-success" value="submit">Submit</button>
+    </form>
+</div>
+{% endif %}
+<!-- <p>{% print session.cities%}</p> -->
+
+{% endblock %}

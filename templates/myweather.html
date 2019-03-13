@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+<script >
+
+</script>
+{% block body %}
+<div class = "jumbotron text-center col-md-7">
+    <div class="list-group">
+        <form action="/weather_search" method="POST">
+        {% for city in session.cities %}
+        <input name="search_term" class="list-group-item btn-default" type="submit" value="{{city['id']}} : {{city['name']}} : {{city['country']}}" readonly>
+        
+        {% endfor %}
+        </form>
+    </div>
+</div>
+<p>{% print session.cities %}</p>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center">
+		<h1>Welcome To 254Weather</h1>
+		<p class="lead">An application built on the flask python framework and leveraging Openweathermap's Api to provide weather data for any location</p>
+		{% if session.logged_in == NULL %}
+		  <a href="/register" class="btn btn-primary btn-lg">Register</a>
+		  <a href="/login" class="btn btn-success btn-lg">Log In</a>
+		{% endif %}  
+	</div>
+{% endblock %}
