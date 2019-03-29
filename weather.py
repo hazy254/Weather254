@@ -1,29 +1,19 @@
 from pyowm import OWM
 from flask import session
 
-import pymysql
 
-connection = pymysql.connect(host='localhost',
-                             user='root',
-                             password='Hazy9996',
-                             db='254weather',
-                             cursorclass=pymysql.cursors.DictCursor)
 
 API_key = '7a20bb50e3dd278369161f06ba152895'
 owm = OWM(API_key)
+reg = owm.city_id_registry()
 
 def get_city_id():
     data = session.get('form_data', None)
-    user_search = data.upper()
+    user_search = data.title()
     cities = []
-    with connection.cursor() as cursor:
-        sql = "SELECT * FROM cities WHERE UPPER(name) LIKE %s "
-        result = cursor.execute(sql, (user_search))
-        if result > 0:
-            for row in cursor:
-                cities.append(row)
+    result = reg.ids_for(user_search)
+    if result:
+        for city in result:
+            cities.append(city)
         session['cities'] = cities
-
-
-    connection.commit()
     return True    
