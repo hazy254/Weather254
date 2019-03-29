@@ -1,8 +1,6 @@
 from flask import Flask,flash, redirect, url_for, session, logging, request
 from FormHandler import CitySearch
 from pyowm import OWM
-import json 
-import requests
 
 
 API_key = '7a20bb50e3dd278369161f06ba152895'
