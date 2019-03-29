@@ -1,9 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-<h1>Dashboard<small> Welcome {{session.username}}</small> </h1>
+<h1>Dashboard</h1>
+<h3> Welcome {{session.username}}</h3>
 {% if session.user_searched != True %}
 <div class = "text-center, jumbotron">
+    <h4>Please enter the city who's weather you need below: </h4>
     <form class="form-group" method="POST">
         <input class = "form-control" name="city" ><br>
         <button type="submit" class="btn btn-success" value="submit">Submit</button>
