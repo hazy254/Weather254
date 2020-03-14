@@ -3,7 +3,7 @@ from flask import session
 
 
 
-API_key = '7a20bb50e3dd278369161f06ba152895'
+API_key = #API key goes here
 owm = OWM(API_key)
 reg = owm.city_id_registry()
 
