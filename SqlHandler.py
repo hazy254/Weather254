@@ -47,11 +47,7 @@ class CursorFromConnectionPool:
             self.conn.commit()
         Database.return_connection(self.conn)
 
-
-Database.initialise(user='postgres',
-                    password='Beamboys1995',
-                    database='myweather',
-                    host = 'localhost')
+#Initialise database with Database.initalise(user credentials go here)
 
 def register():
     form = RegisterForm(request.form)
