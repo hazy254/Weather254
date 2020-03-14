@@ -3,7 +3,7 @@ from FormHandler import CitySearch
 from pyowm import OWM
 
 
-API_key = '7a20bb50e3dd278369161f06ba152895'
+API_key = #The API key from OWM goes here
 owm = OWM(API_key)
 
 def search():
