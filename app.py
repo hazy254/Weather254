@@ -115,5 +115,5 @@ def weather_search():
 
 
 if __name__ == '__main__':
-	app.secret_key = 'secret123'
+	#input secret key here
 	app.run(debug=True) 
